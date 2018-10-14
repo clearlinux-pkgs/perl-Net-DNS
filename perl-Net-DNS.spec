@@ -4,7 +4,7 @@
 #
 Name     : perl-Net-DNS
 Version  : 1.18
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.18.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.18.tar.gz
 Summary  : 'Perl Interface to the Domain Name System'
@@ -54,9 +54,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -65,88 +65,88 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Domain.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/DomainName.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/FAQ.pod
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Header.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Mailbox.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Nameserver.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Packet.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Parameters.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Question.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/A.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/AAAA.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/AFSDB.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/APL.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/CAA.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/CDNSKEY.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/CDS.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/CERT.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/CNAME.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/CSYNC.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/DHCID.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/DLV.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/DNAME.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/DNSKEY.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/DS.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/EUI48.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/EUI64.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/GPOS.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/HINFO.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/HIP.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/IPSECKEY.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/ISDN.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/KEY.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/KX.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/L32.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/L64.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/LOC.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/LP.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/MB.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/MG.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/MINFO.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/MR.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/MX.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/NAPTR.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/NID.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/NS.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/NSEC.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/NSEC3.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/NSEC3PARAM.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/NULL.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/OPENPGPKEY.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/OPT.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/PTR.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/PX.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/RP.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/RRSIG.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/RT.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/SIG.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/SMIMEA.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/SOA.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/SPF.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/SRV.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/SSHFP.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/TKEY.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/TLSA.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/TSIG.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/TXT.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/URI.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/RR/X25.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver/Base.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver/MSWin32.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver/Recurse.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver/UNIX.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver/android.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver/cygwin.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver/os2.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Resolver/os390.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Text.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/Update.pm
-/usr/lib/perl5/site_perl/5.26.1/Net/DNS/ZoneFile.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Domain.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/DomainName.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/FAQ.pod
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Header.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Mailbox.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Nameserver.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Packet.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Parameters.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Question.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/A.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/AAAA.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/AFSDB.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/APL.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/CAA.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/CDNSKEY.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/CDS.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/CERT.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/CNAME.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/CSYNC.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/DHCID.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/DLV.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/DNAME.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/DNSKEY.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/DS.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/EUI48.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/EUI64.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/GPOS.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/HINFO.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/HIP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/IPSECKEY.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/ISDN.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/KEY.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/KX.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/L32.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/L64.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/LOC.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/LP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/MB.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/MG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/MINFO.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/MR.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/MX.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/NAPTR.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/NID.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/NS.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/NSEC.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/NSEC3.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/NSEC3PARAM.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/NULL.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/OPENPGPKEY.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/OPT.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/PTR.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/PX.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/RP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/RRSIG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/RT.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/SIG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/SMIMEA.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/SOA.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/SPF.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/SRV.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/SSHFP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/TKEY.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/TLSA.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/TSIG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/TXT.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/URI.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/RR/X25.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver/Base.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver/MSWin32.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver/Recurse.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver/UNIX.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver/android.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver/cygwin.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver/os2.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Resolver/os390.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Text.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/Update.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Net/DNS/ZoneFile.pm
 
 %files dev
 %defattr(-,root,root,-)
