@@ -4,7 +4,7 @@
 #
 Name     : perl-Net-DNS
 Version  : 1.20
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.20.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.20.tar.gz
 Summary  : Perl Module: Interface to the DNS resolver
