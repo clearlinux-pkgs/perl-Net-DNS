@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-Net-DNS
-Version  : 1.39
-Release  : 49
-URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.39.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.39.tar.gz
+Version  : 1.40
+Release  : 50
+URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.40.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.40.tar.gz
 Summary  : 'Perl Interface to the Domain Name System'
 Group    : Development/Tools
 License  : HPND MIT
@@ -53,10 +53,10 @@ perl components for the perl-Net-DNS package.
 
 
 %prep
-%setup -q -n Net-DNS-1.39
-cd %{_builddir}/Net-DNS-1.39
+%setup -q -n Net-DNS-1.40
+cd %{_builddir}/Net-DNS-1.40
 pushd ..
-cp -a Net-DNS-1.39 buildavx2
+cp -a Net-DNS-1.40 buildavx2
 popd
 
 %build
