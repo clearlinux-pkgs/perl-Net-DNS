@@ -6,10 +6,10 @@
 # autospec commit: c1050fe
 #
 Name     : perl-Net-DNS
-Version  : 1.41
-Release  : 53
-URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.41.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.41.tar.gz
+Version  : 1.42
+Release  : 54
+URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.42.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.42.tar.gz
 Summary  : 'Perl Interface to the Domain Name System'
 Group    : Development/Tools
 License  : HPND MIT
@@ -17,7 +17,6 @@ Requires: perl-Net-DNS-license = %{version}-%{release}
 Requires: perl-Net-DNS-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Digest::HMAC)
-BuildRequires : perl(Getopt::Long)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -56,10 +55,10 @@ perl components for the perl-Net-DNS package.
 
 
 %prep
-%setup -q -n Net-DNS-1.41
-cd %{_builddir}/Net-DNS-1.41
+%setup -q -n Net-DNS-1.42
+cd %{_builddir}/Net-DNS-1.42
 pushd ..
-cp -a Net-DNS-1.41 buildavx2
+cp -a Net-DNS-1.42 buildavx2
 popd
 
 %build
