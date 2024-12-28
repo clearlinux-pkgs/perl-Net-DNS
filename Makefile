@@ -1,5 +1,5 @@
 PKG_NAME := perl-Net-DNS
-URL = https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.48.tar.gz
+URL = https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.49.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
