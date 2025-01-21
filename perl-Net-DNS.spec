@@ -7,7 +7,7 @@
 #
 Name     : perl-Net-DNS
 Version  : 1.49
-Release  : 63
+Release  : 64
 URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.49.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.49.tar.gz
 Summary  : 'Perl Interface to the Domain Name System'
