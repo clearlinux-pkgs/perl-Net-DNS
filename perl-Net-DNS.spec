@@ -6,10 +6,10 @@
 # autospec commit: fbbd4e3
 #
 Name     : perl-Net-DNS
-Version  : 1.49
-Release  : 66
-URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.49.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.49.tar.gz
+Version  : 1.50
+Release  : 67
+URL      : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.50.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.50.tar.gz
 Summary  : 'Perl Interface to the Domain Name System'
 Group    : Development/Tools
 License  : HPND MIT
@@ -55,13 +55,13 @@ perl components for the perl-Net-DNS package.
 
 
 %prep
-%setup -q -n Net-DNS-1.49
-cd %{_builddir}/Net-DNS-1.49
+%setup -q -n Net-DNS-1.50
+cd %{_builddir}/Net-DNS-1.50
 pushd ..
-cp -a Net-DNS-1.49 buildavx2
+cp -a Net-DNS-1.50 buildavx2
 popd
 pushd ..
-cp -a Net-DNS-1.49 buildapx
+cp -a Net-DNS-1.50 buildapx
 popd
 
 %build
@@ -163,6 +163,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Net::DNS::RR::OPT.3
 /usr/share/man/man3/Net::DNS::RR::PTR.3
 /usr/share/man/man3/Net::DNS::RR::PX.3
+/usr/share/man/man3/Net::DNS::RR::RESINFO.3
 /usr/share/man/man3/Net::DNS::RR::RP.3
 /usr/share/man/man3/Net::DNS::RR::RRSIG.3
 /usr/share/man/man3/Net::DNS::RR::RT.3
